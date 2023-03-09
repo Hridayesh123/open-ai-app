@@ -11,10 +11,10 @@ app.get("/", function(request, response){
   })
 
 app.post("/", function(request,response){
-   var userData=request.body.concerns;
+   var userData=request.body.concerns; //user input stored
 
    const configuration = new Configuration({
-    apiKey: "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",
+    apiKey: "insert api key",
 });
 const openai = new OpenAIApi(configuration);
 
@@ -26,14 +26,14 @@ async function runCompletion(){
         max_tokens : 2048,
         temperature : 1
     });
-    console.log(response.data);
+    console.log(response.data); // console ai answer
  
    
   
 }
 runCompletion();
 
-   response.send(response.choices[0]["text"]);
+   response.send(response.choices[0]["text"]); //post ai answer
 })
 
 
